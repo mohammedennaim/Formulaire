@@ -6,6 +6,8 @@ const prenom = document.getElementById('prenom');
 const age = document.getElementById('age');
 const tel = document.getElementById('telephone');
 const email = document.getElementById('email');
+const feedback =document.getElementById('feedback');
+const save = document.getElementById('save');
 const nextForm1 = document.getElementById('next-form-1');
 const nextForm2 = document.getElementById('next-form-2');
 const returnForm2 = document.getElementById('retour-form-2');
@@ -45,7 +47,7 @@ const ageValue = age.value.trim();
         groups.querySelector(".erreur").innerText = ''
     }
     
-    if(form1.style.display!="none" && nomValue != '' && prenomValue != '' && ageValue != ''){
+    if(form1.style.display!="none" && nomValue != '' && prenomValue != '' && ageValue > 17){
         form1.style.display = 'none'
         form2.style.display = 'flex'
     }
@@ -93,3 +95,15 @@ returnForm3.addEventListener("click", (e)=>{
         form2.style.display = 'flex'
     }
 })
+save.addEventListener('click', (e) =>{
+    const fbValue = feedback.value.trim();
+    e.preventDefault();
+    if(fbValue == ''){
+        groups =feedback.parentElement;
+        groups.querySelector('.erreur').innerText = message;
+        groups.querySelector('.erreur').style.color ="red";
+    }else{
+        groups.querySelector('.erreur').style.display = "none";
+        alert("success");
+    }
+} )
