@@ -13,68 +13,81 @@
 <body>
     <section>
         <div class="container">
-            <form id="form1">
-                <div>
-                    <h1>Formulaires d’Évaluation des Employés</h1>
-                    <div class="form-group col-md-10">
-                        <label for="nom">Entrez votre nom</label>
-                        <input type="nom" class="form-control " id="nom" placeholder="ENNAIM">
-                        <div class="erreur"></div>
+            <form>
+                <div id="form1">
+                    <div>
+                        <h1>Formulaires d’Évaluation des Employés</h1>
+                        <div class="form-group col-md-10">
+                            <label for="nom">Entrez votre nom</label>
+                            <input type="nom" class="form-control " id="nom" placeholder="ENNAIM">
+                            <div class="erreur"></div>
+                        </div>
+                        <div class="form-group col-md-10">
+                            <label for="nom">Entrez votre prenom</label>
+                            <input type="nom" class="form-control" id="prenom" placeholder="Mohammed">
+                            <div class="erreur"></div>
+                        </div>
+                        <div class="form-group col-md-10">
+                            <label for="nom">Entrez votre age</label>
+                            <input type="number" class="form-control" id="age" placeholder="25">
+                            <div class="erreur"></div>
+                        </div>
+                        <button class="btn btn-primary col-md-10" id="next-form-1">next</button>
                     </div>
-                    <div class="form-group col-md-10">
-                        <label for="nom">Entrez votre prenom</label>
-                        <input type="nom" class="form-control" id="prenom" placeholder="Mohammed">
-                        <div class="erreur"></div>
-                    </div>
-                    <div class="form-group col-md-10">
-                        <label for="nom">Entrez votre age</label>
-                        <input type="number" class="form-control" id="age" placeholder="25">
-                        <div class="erreur"></div>
-                    </div>
-                    <button class="btn btn-primary col-md-10" id="next-form-1">next</button>
                 </div>
-            </form>
-            
-            <form id="form2">
-                <div>
-                    <h1>Formulaires d’Évaluation des Employés</h1>
-                    <div class="form-row">
-                        <div class="form-group col-md-10">
-                            <label for="telephone">Telephone</label>
-                            <input type="tel" class="form-control" id="telephone" placeholder="Entrez your phone">
-                            <div class="erreur"></div>
-                        </div>
-                        <div class="form-group col-md-10">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Entrez your Email">
-                            <div class="erreur"></div>
-                        </div>
-                        <div class="col-md-10">
-                            <label for="url">Ajoutez l'URL de votre Portfolio</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend"><span class="input-group-text"
-                                        id="url-base">https://</span></div>
-                                <input type="text" class="form-control" id="url" aria-describedby="url-base">
+
+                <div id="form2">
+                    <div>
+                        <h1>Formulaires d’Évaluation des Employés</h1>
+                        <div class="form-row">
+                            <div class="form-group col-md-10">
+                                <label for="telephone">Telephone</label>
+                                <input type="tel" class="form-control" id="telephone" placeholder="Entrez your phone">
+                                <div class="erreurs">
+                                    <div class="erreur"></div>
+                                    <div class="regx"></div>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-10">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Entrez your Email">
+                                <div class="erreurs">
+                                    <div class="erreur"></div>
+                                    <div class="regx"></div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="col-md-10">
+                                <label for="url">Ajoutez l'URL de votre Portfolio</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend"><span class="input-group-text"
+                                            id="url-base">https://</span></div>
+                                    <input type="text" class="form-control" id="url" aria-describedby="url-base">
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <button class="btn btn-primary col-md-5" id="retour-form-2">retour</button>
-                    <button class="btn btn-primary col-md-5" id="next-form-2" onclick="">next</button>
-                </div>
-            </form>
-            <form id="form3">
-                <div>
-                    <h1>Formulaires d’Évaluation des Employés</h1>
-                    <br>
-                    <div class="feedback">
-                        <label for="feedback">FeedBack :</label>
-                        <br>
-                        <textarea name="feedback" id="feedback" rows="5"></textarea>
-                        <div class="erreur"></div>
+                        <button class="btn btn-primary col-md-5" id="retour-form-2">retour</button>
+                        <button class="btn btn-primary col-md-5" id="next-form-2">next</button>
                     </div>
-                    <button class="btn btn-primary col-md-5" id="retour-form-3">retour</button>
-                    <button class="btn btn-primary col-md-5" id="save">save</button>
+                </div>
+                <div id="form3">
+                    <div>
+                        <h1>Formulaires d’Évaluation des Employés</h1>
+                        <br>
+                        <div>
+                            <label for="feedback">FeedBack :</label>
+                            <br>
+                            <br>
+                            <textarea name="feedback" id="feedback" cols="67" rows="5"></textarea>
+                            <div class="erreur"></div>
+                        </div>
+                        <button class="btn btn-primary col-md-5" id="retour-form-3">retour</button>
+                        <button class="btn btn-primary col-md-5" id="save">save</button>
+                        <button class="btn btn-primary col-md-10" id="afficher">afficher</button>
+                    </div>
+                </div>
+                <div class="affichage">
                 </div>
             </form>
         </div>

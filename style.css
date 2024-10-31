@@ -24,19 +24,19 @@ section{
     display: flex;
 }
 
-form:nth-of-type(2){
+#form2{
     display: none;
+}
+#form3{
+    display: none;
+}
 
-}
-form:nth-of-type(3){
-    display: none;
-}
-.feedback{
-    display: grid;
-    grid-template-rows: auto 1fr;
-}
 .input-group-text{
     border:none;
+}
+.erreurs{
+    display: flex;
+    gap: 20px;
 }
 form .form-group{
     margin-top: 30px;
