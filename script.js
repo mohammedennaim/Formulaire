@@ -58,8 +58,8 @@ const regexEmail = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$/;
 const regexTel = /(\+212|0)([0-9]+){9}/;
     e.preventDefault();
     
-    if (telValue != '' || !regexTel.test(telValue)) {
-        tel.parentElement.querySelector(".erreur").innerText = message + ' saisir +212xxxx | 0xxxx';
+    if (telValue == '' || !regexTel.test(telValue)) {
+        tel.parentElement.querySelector(".erreur").innerText = ' saisir +212xxxx | 0xxxx';
         tel.parentElement.querySelector(".erreur").style.color = "red";
         tel.parentElement.querySelector(".erreur").style.display = "block";
     }else{
@@ -67,7 +67,7 @@ const regexTel = /(\+212|0)([0-9]+){9}/;
     }
 
     if (emailValue == '' || !regexEmail.test(emailValue)) {
-        email.parentElement.querySelector(".erreur").innerText = message + ' email pas correct';
+        email.parentElement.querySelector(".erreur").innerText = ' email pas correct';
         email.parentElement.querySelector(".erreur").style.color = "red";
         email.parentElement.querySelector(".erreur").style.display = "block";
     }else{
@@ -155,11 +155,12 @@ afficher.addEventListener('click', (e) => {
     let obj = JSON.parse(localStorage.getItem('formulaire'));
 
     affichage.innerHTML = `
+        <h2>Afficher Évaluation Employés</h2>
         <p>Nom : ${obj.nom}</p>
         <p>Prenom : ${obj.prenom}</p>
         <p>Age : ${obj.age}</p>
         <p>Telephone : ${obj.telephone}</p>
-        <p>Email : ${obj.Email}</p>
+        <p>Email : ${obj.email}</p>
         <p>Feedback : ${obj.feedback}</p>
     `  
 })
