@@ -21,14 +21,17 @@ section{
     align-items: center;
 }
 #form1{
-    display: flex;
+    display: none;
 }
-
 #form2{
     display: none;
 }
 #form3{
-    display: none;
+    display: flex;
+}
+#affichage{
+    display: flex;
+    flex-direction: column;
 }
 
 .input-group-text{

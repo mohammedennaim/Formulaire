@@ -52,7 +52,7 @@ const ageValue = age.value.trim();
         groups.querySelector(".erreur").style.display = "none";
     }
     
-    if(form1.style.display!="none" && nomValue != '' && prenomValue != '' && ageValue > 17){
+    if(nomValue != '' && prenomValue != '' && ageValue > 17){
         form1.style.display = 'none';
         form2.style.display = 'flex';
     }
@@ -96,7 +96,7 @@ const regexEmail = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$/;
         groups.querySelector(".regx").style.display = "none";
     }
     
-    if(form2.style.display!="none" && telValue !='' && regexEmail.test(emailValue) && emailValue != ''){
+    if(telValue !='' && regexEmail.test(emailValue) && emailValue != ''){
         form2.style.display = 'none'
         form3.style.display = 'flex'
     }
@@ -104,29 +104,18 @@ const regexEmail = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$/;
 
 returnForm2.addEventListener("click", (e)=>{
     e.preventDefault();
-    if(form2.style.display!="none"){
-        form2.style.display = 'none'
-        form1.style.display = 'flex'
-    }
+    form2.style.display = 'none'
+    form1.style.display = 'flex'
 })
 
 returnForm3.addEventListener("click", (e)=>{
     e.preventDefault();
-    if(form3.style.display!="none"){
-        form3.style.display = 'none'
-        form2.style.display = 'flex'
-    }
+    form3.style.display = 'none'
+    form2.style.display = 'flex'
 })
 
 save.addEventListener('click', (e) =>{
-    let formulaire = {
-        nom : nom.value,
-        prenom : prenom.value,
-        age : age.value,
-        telephone : tel.value,
-        email : email.value,
-        feedback : feedback.value
-    }
+    
     const fbValue = feedback.value.trim();
     e.preventDefault();
     if(fbValue == ''){
@@ -135,7 +124,27 @@ save.addEventListener('click', (e) =>{
         groups.querySelector('.erreur').style.color ="red";
     }else{
         groups.querySelector('.erreur').style.display = "none";
-        localStorage.setItem('formulaire', JSON.stringify(formulaire));
+        localStorage.setItem('nom', nom.value);
+        localStorage.setItem('prenom', prenom.value);
+        localStorage.setItem('age', age.value);
+        localStorage.setItem('telephone', tel.value);
+        localStorage.setItem('email', email.value);
+        localStorage.setItem('feedback', feedback.value);
         
     }
 } )
+
+afficher.addEventListener('click', (e) => {
+    e.preventDefault();
+    affichage.style.display = 'flex'
+    form3.style.display = 'none'
+    affichage.innerHTML = `
+        <p>Nom : ${localStorage.getItem('nom')}</p>
+        <p>Prenom : ${localStorage.getItem('prenom')}</p>
+        <p>Age : ${localStorage.getItem('age')}</p>
+        <p>Telephone : ${localStorage.getItem('telephone')}</p>
+        <p>Fmail : ${localStorage.getItem('email')}</p>
+        <p>Feedback : ${localStorage.getItem('feedback')}</p>
+    `
+    
+})
