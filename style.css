@@ -21,16 +21,16 @@ section{
     align-items: center;
 }
 #form1{
-    display: none;
+    display: flex;
 }
 #form2{
     display: none;
 }
 #form3{
-    display: flex;
+    display: none;
 }
 #affichage{
-    display: flex;
+    display: none;
     flex-direction: column;
 }
 
